@@ -1,5 +1,5 @@
 import express from 'express';
-import { events } from './events-model.mjs';
+import { eventCollection } from './events-model.mjs';
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.get("/:userID/dates", async (req, res) => {
     const { userID } = req.params
 
     try {
-        const events = await Event.find({
+        const events = await eventCollection.find({
             userID: userID,
             startEvent: {
                 $gte: start,
@@ -29,7 +29,7 @@ router.post("/", async(req, res) => {
     try {
         const { userId, attendees, startEvent, endEvent, title } = req.body;
 
-        const event = await Event.create({
+        const event = await eventCollection.create({
             userID,
             attendees,
             startEvent,
@@ -48,7 +48,7 @@ router.post("/", async(req, res) => {
 router.delete("/:id", async(req, res) => {
     const { id } = req.params
     try {
-        const event = await Event.findOneAndDelete({ _id: id})
+        const event = await eventCollection.findOneAndDelete({ _id: id})
         if (!event) {
             return res.status(404).json({
                 error: "Unable to locate event with that id for delete operation.",

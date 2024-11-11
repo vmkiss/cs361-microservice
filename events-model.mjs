@@ -29,7 +29,7 @@ const eventSchema = new mongoose.Schema({
     title: { type: String, required: true }    
 });
 
-const events = mongoose.model('Events', eventSchema);
+const eventCollection = mongoose.model('Event', eventSchema);
 
-export { events }
+export { eventCollection }
 
