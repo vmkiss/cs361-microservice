@@ -27,7 +27,7 @@ router.get("/:userID/dates", async (req, res) => {
 // Create new event
 router.post("/", async(req, res) => {
     try {
-        const { userId, attendees, startEvent, endEvent, title } = req.body;
+        const { userID, attendees, startEvent, endEvent, title } = req.body;
 
         const event = await eventCollection.create({
             userID,
@@ -54,13 +54,12 @@ router.delete("/:id", async(req, res) => {
                 error: "Unable to locate event with that id for delete operation.",
             })
         }
-        res. status(200).json(patient)
+        res. status(200).json(event)
     } catch (error) {
-        res.status(400.).json({
+        res.status(400).json({
             error: "Invalid request from client for event delete operation.",
         })
     }
 })
-
 
 export { router }
