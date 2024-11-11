@@ -45,7 +45,7 @@ router.post("/", async(req, res) => {
 });
 
 // Delete an event
-router.delete("/:id", (req, res) => {
+router.delete("/:id", async(req, res) => {
     const { id } = req.params
     try {
         const event = await Event.findOneAndDelete({ _id: id})
