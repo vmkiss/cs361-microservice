@@ -42,5 +42,22 @@ const getEvent = async() => {
     }
 };
 
+const deleteEvent = async() => {
+    try {
+        const deleteID = "673bc139c744404a1b60e18a";
+
+        const response = await axios.delete(`${BASE_URL}/events/${deleteID}`);
+
+        console.log(`Event with id ${deleteID} successfully deleted: `, response.data);
+    } catch (error) {
+        if (error.response) {
+            console.error('Error: ', error.response.data.error);
+        } else {
+            console.error('Error: ', error.message);
+        }
+    }
+};
+
 //createEvent();
-getEvent();
+//getEvent();
+deleteEvent();
