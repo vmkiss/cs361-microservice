@@ -59,5 +59,5 @@ const deleteEvent = async() => {
 };
 
 //createEvent();
-//getEvent();
-deleteEvent();
+getEvent();
+//deleteEvent();

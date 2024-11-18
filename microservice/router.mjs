@@ -17,6 +17,7 @@ router.get("/:userID/dates", async (req, res) => {
             }
         }).sort({ startEvent: 1})
         res.status(200).json(events)
+        console.log(`Successfully retrieved these events: ${events}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client from matching events.",
