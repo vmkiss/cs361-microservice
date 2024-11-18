@@ -1,15 +1,17 @@
 import axios from 'axios';
+import 'dotenv/config';
 
-const BASE_URL = 'http://localhost:3000'
+const MS_URL = process.env.MS_URL;
 
 const createEvent = async () => {
     try {
-        const response = await axios.post(`${BASE_URL}/events`, {
+        console.log("Creating event...")
+        const response = await axios.post(`${MS_URL}/events`, {
             "userID": "1",
             "attendees": ["3",],
-            "startEvent": "2025-11-14T15:30:00",
-            "endEvent": "2025-11-14T16:30:00",
-            "title": "Tom Sawyer Appointment",
+            "startEvent": "2025-12-14T15:30:00",
+            "endEvent": "2025-12-14T16:30:00",
+            "title": "Evelyn Marshfield Appointment",
         });
 
         console.log('Event created successfully:', response.data);
@@ -25,10 +27,10 @@ const createEvent = async () => {
 const getEvent = async() => {
     try {
         const userID = 1;
-        const startEvent = "2025-11-14T15:30:00";
-        const endEvent = "2025-11-14T16:30:00";
+        const startEvent = "2025-12-14T15:30:00";
+        const endEvent = "2025-12-14T16:30:00";
 
-        const response = await axios.get(`${BASE_URL}/events/${userID}/dates`, {
+        const response = await axios.get(`${MS_URL}/events/${userID}/dates`, {
             params: { start: startEvent, end: endEvent },
         });
 
@@ -46,7 +48,7 @@ const deleteEvent = async() => {
     try {
         const deleteID = "673bc90b73cd802e1dd3ce8c";
 
-        const response = await axios.delete(`${BASE_URL}/events/${deleteID}`);
+        const response = await axios.delete(`${MS_URL}/events/${deleteID}`);
 
         console.log(`Event with id ${deleteID} successfully deleted: `, response.data);
     } catch (error) {
@@ -58,6 +60,4 @@ const deleteEvent = async() => {
     }
 };
 
-//createEvent();
-getEvent();
-//deleteEvent();
+createEvent();
