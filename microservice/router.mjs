@@ -38,6 +38,7 @@ router.post("/", async(req, res) => {
             title
         })
         res.status(200).json(event)
+        console.log(`Successfully created this event: ${event}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client for event creation operation.",
@@ -56,6 +57,7 @@ router.delete("/:id", async(req, res) => {
             })
         }
         res.status(200).json(event)
+        console.log(`Successfully deleted this event: ${event}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client for event delete operation.",
