@@ -22,4 +22,25 @@ const createEvent = async () => {
     }
 };
 
-createEvent();
+const getEvent = async() => {
+    try {
+        const userID = 1;
+        const startEvent = "2024-11-14T15:30:00";
+        const endEvent = "2024-11-14T16:30:00";
+
+        const response = await axios.get(`${BASE_URL}/events/${userID}/dates`, {
+            params: { start: startEvent, end: endEvent },
+        });
+
+        console.log('Event(s) successfully retrieved: ', response.data);
+    } catch (error) {
+        if (error.response) {
+            console.error('Error:', error.response.data.error);
+        } else {
+            console.error('Error: ', error.message);
+        }
+    }
+};
+
+//createEvent();
+getEvent();
