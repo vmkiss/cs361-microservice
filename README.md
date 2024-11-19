@@ -31,7 +31,7 @@ Request parameters: userID (string), start date/time (date), end date/time (date
 parameters will be included as a JSON object in the body of the post request.
 
 Example call:
-![App Screenshot](Screenshot (105).png)
+![App Screenshot](Screenshot%20(105).png)
 
 
 2) GET request
