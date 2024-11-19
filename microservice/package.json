@@ -1,0 +1,20 @@
+{
+  "name": "cs361-microservice",
+  "version": "1.0.0",
+  "description": "scheduling microservice",
+  "main": "server.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.mjs"
+  },
+  "author": "Veronika Kiss",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv":"16.4.5",
+    "express": "4.21.1",
+    "mongoose": "8.8.1",
+    "nodemon": "3.1.7",
+    "rest": "2.0.0"
+  }
+}
