@@ -16,7 +16,7 @@
     Define a variable MONGODB_CONNECT_STRING and set it to a MongoDB connection string. I can provide the connection string I used upon request, or you can create your own cluster and connection string in MongoDB.
 
 ## How to Programmatically REQUEST Data
-The microservice can be called using a POST, GET, or DELETE request to the server on which it is listening through through three different endpoints beginning with: /events.
+The microservice can be called using a POST, GET, or DELETE request to the server on which it is listening through three different endpoints beginning with: /events.
 
 Below is a breakdown of the three different request types and their parameters and endpoints. For all requests, the variable MS_URL represents the url which the microservice on which the microservice is listening. Example calls for each request type are included using axios.
 
@@ -31,6 +31,7 @@ Request parameters: userID (string), start date/time (date), end date/time (date
 parameters will be included as a JSON object in the body of the post request.
 
 Example call:
+
 ![App Screenshot](Screenshot%20(105).png)
 
 
@@ -44,6 +45,8 @@ Request parameters: userID, start date, end date
 
 Example call:
 
+![App Screenshot](Screenshot%20(106).png)
+
 3) DELETE request
 
 Purpose: To delete the event with the given ID
@@ -53,6 +56,8 @@ Endpoint: MS_URL/events/eventID
 Request parameter: event ID
 
 Example call:
+
+![App Screenshot](Screenshot%20(107).png)
 
 
 ## How to Programmatically RECEIVE Data
