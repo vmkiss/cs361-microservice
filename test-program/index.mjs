@@ -7,11 +7,11 @@ const createEvent = async () => {
     try {
         console.log("Creating event...")
         const response = await axios.post(`${MS_URL}/events`, {
-            "userID": "1",
+            "userID": "2",
             "attendees": ["3",],
-            "startEvent": "2025-11-18T15:30:00",
-            "endEvent": "2025-11-18T16:30:00",
-            "title": "Victoria Marsh Appointment",
+            "startEvent": "2025-12-18T15:30:00",
+            "endEvent": "2025-12-18-T16:30:00",
+            "title": "Chloe Price Appointment",
         });
 
         console.log('Event created successfully:', response.data);
@@ -26,9 +26,9 @@ const createEvent = async () => {
 
 const getEvent = async() => {
     try {
-        const userID = 1;
-        const startEvent = "2025-11-18T15:30:00";
-        const endEvent = "2025-11-18-T16:30:00";
+        const userID = 2;
+        const startEvent = "2025-12-18T15:30:00";
+        const endEvent = "2025-12-18-T16:30:00";
 
         const response = await axios.get(`${MS_URL}/events/${userID}/dates`, {
             params: { start: startEvent, end: endEvent },
@@ -46,7 +46,7 @@ const getEvent = async() => {
 
 const deleteEvent = async() => {
     try {
-        const deleteID = "673bc90b73cd802e1dd3ce8c";
+        const deleteID = "673bd513c0cc77d74a70cbc2";
 
         const response = await axios.delete(`${MS_URL}/events/${deleteID}`);
 
@@ -61,5 +61,5 @@ const deleteEvent = async() => {
 };
 
 createEvent();
-getEvent();
-deleteEvent();
+//getEvent();
+//deleteEvent();
