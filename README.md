@@ -1,5 +1,5 @@
 
-# Event Microservice
+# Event Microservice Communication Contract
 
 
 
