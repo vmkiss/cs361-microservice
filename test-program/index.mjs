@@ -9,8 +9,8 @@ const createEvent = async () => {
         const response = await axios.post(`${MS_URL}/events`, {
             "userID": "2",
             "attendees": ["3",],
-            "startEvent": "2025-12-18T15:30:00",
-            "endEvent": "2025-12-18-T16:30:00",
+            "startEvent": "2025-12-25T15:30:00",
+            "endEvent": "2025-12-25T15:30:00",
             "title": "Chloe Price Appointment",
         });
 
@@ -26,9 +26,10 @@ const createEvent = async () => {
 
 const getEvent = async() => {
     try {
+        console.log("Retrieving event(s)")
         const userID = 2;
-        const startEvent = "2025-12-18T15:30:00";
-        const endEvent = "2025-12-18-T16:30:00";
+        const startEvent = "2025-12-25T15:30:00";
+        const endEvent = "2025-12-25T16:30:00";
 
         const response = await axios.get(`${MS_URL}/events/${userID}/dates`, {
             params: { start: startEvent, end: endEvent },
@@ -46,6 +47,7 @@ const getEvent = async() => {
 
 const deleteEvent = async() => {
     try {
+        console.log("Deleting event...")
         const deleteID = "673bd513c0cc77d74a70cbc2";
 
         const response = await axios.delete(`${MS_URL}/events/${deleteID}`);
@@ -60,6 +62,6 @@ const deleteEvent = async() => {
     }
 };
 
-createEvent();
+//createEvent();
 //getEvent();
-//deleteEvent();
+deleteEvent();

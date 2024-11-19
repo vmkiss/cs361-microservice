@@ -17,7 +17,7 @@ router.get("/:userID/dates", async (req, res) => {
             }
         }).sort({ startEvent: 1})
         res.status(200).json(events)
-        console.log(`Successfully retrieved these events: ${events}`)
+        console.log(`Microservice successfully retrieved these events: ${events}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client from matching events.",
@@ -38,7 +38,7 @@ router.post("/", async(req, res) => {
             title
         })
         res.status(200).json(event)
-        console.log(`Successfully created this event: ${event}`)
+        console.log(`Microservice successfully created this event: ${event}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client for event creation operation.",
@@ -57,7 +57,7 @@ router.delete("/:id", async(req, res) => {
             })
         }
         res.status(200).json(event)
-        console.log(`Successfully deleted this event: ${event}`)
+        console.log(`Microservice successfully deleted this event: ${event}`)
     } catch (error) {
         res.status(400).json({
             error: "Invalid request from client for event delete operation.",
