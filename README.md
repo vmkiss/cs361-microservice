@@ -70,11 +70,15 @@ The microserivce will return the data from the event that was stored in the data
 
 Data format example:
 
+![App Screenshot](Screenshot%20(108).png)
+
 2) GET request
 
 The microservice will return an array of all the database entries that match the given user ID and whose parameters are between the given start and end date query parameters. Otherwise, it will return an error status and message if the request failed.
 
 Data format example:
+
+![App Screenshot](Screenshot%20(109).png)
 
 3) DELETE request
 
@@ -82,6 +86,8 @@ The microservice will return the data from the entry that was found and delete f
 
 Data format example:
 
-
+![App Screenshot](Screenshot%20(110).png)
 
 ## UML Diagram
+
+![App Screenshot](Microservice%20UML%20Diagram.png)
